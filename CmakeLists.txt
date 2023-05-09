@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(Prograde VERSION 0.1.0)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+add_subdirectory(libs/raindrop)
+
+set(RAINDROP_INCLUDE_DIRS libs/raindrop/include libs/raindrop/include/Raindrop libs/raindrop/libs/glm/)
+
+include_directories(${RAINDROP_INCLUDE_DIRS})
+include_directories(src/)
+
+add_compile_definitions(CMAKE_PROJECT_VERSION_MAJOR=${CMAKE_PROJECT_VERSION_MAJOR} CMAKE_PROJECT_VERSION_MINOR=${CMAKE_PROJECT_VERSION_MINOR} CMAKE_PROJECT_VERSION_PATCH=${CMAKE_PROJECT_VERSION_PATCH})
+
+add_subdirectory(src)
