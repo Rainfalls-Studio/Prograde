@@ -6,8 +6,8 @@
 namespace Prograde{
 	class Plugin : public ::Raindrop::Graphics::GraphicsPlugin{
 		public:
-			Plugin() : GraphicsPlugin(){}
-			virtual ~Plugin() override = default;
+			Plugin();
+			virtual ~Plugin() override;
 
 			virtual Raindrop::Version version() const override final;
 			virtual const char* name() const override final;
